@@ -1,4 +1,4 @@
-package gr.aueb.cf.eduapp.core.exceptions;
+package gr.aueb.cf.eduapp.core.exception;
 
 import gr.aueb.cf.eduapp.core.exception.AppGenericException;
 
