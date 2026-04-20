@@ -1,6 +1,8 @@
 package gr.aueb.cf.eduapp.core.exception;
 
 import gr.aueb.cf.eduapp.core.exception.AppGenericException;
+import lombok.Getter;
+
 
 public class EntityInvalidArgumentException extends AppGenericException {
     private static final String DEFAULT_CODE = "InvalidArgument";

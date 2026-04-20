@@ -1,5 +1,8 @@
 package gr.aueb.cf.eduapp.core.exception;
 
+import lombok.Getter;
+
+
 public class EntityNotFoundException extends  AppGenericException{
 
     private static final String DEFAULT_CODE = "NotFound";
