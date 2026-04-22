@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
-@Slf4j // TODO add logging
+@Slf4j
 @RequiredArgsConstructor
 public class UserService implements IUserService {
 
