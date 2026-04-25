@@ -1,6 +1,4 @@
-package gr.aueb.cf.eduapp.core.exception;
-
-import lombok.Getter;
+package gr.aueb.cf.eduapp.core.exceptions;
 
 
 public class EntityAlreadyExistsException extends AppGenericException{

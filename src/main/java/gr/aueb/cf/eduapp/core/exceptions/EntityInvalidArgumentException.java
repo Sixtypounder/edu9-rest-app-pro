@@ -1,7 +1,4 @@
-package gr.aueb.cf.eduapp.core.exception;
-
-import gr.aueb.cf.eduapp.core.exception.AppGenericException;
-import lombok.Getter;
+package gr.aueb.cf.eduapp.core.exceptions;
 
 
 public class EntityInvalidArgumentException extends AppGenericException {
