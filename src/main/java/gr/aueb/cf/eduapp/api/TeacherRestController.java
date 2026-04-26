@@ -151,21 +151,22 @@ public class TeacherRestController {
 //                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class))
 //            )
 //    })
-//    @PutMapping("/{uuid}")
-//    public ResponseEntity<TeacherReadOnlyDTO> updateTeacher(
-//            @PathVariable UUID uuid,
-//            @Valid @RequestBody TeacherUpdateDTO teacherUpdateDTO,
-//            BindingResult bindingResult)
-//            throws EntityAlreadyExistsException, EntityInvalidArgumentException, ValidationException, EntityNotFoundException {
-//
+    @PutMapping("/{uuid}")
+    public ResponseEntity<TeacherReadOnlyDTO> updateTeacher(
+            @PathVariable UUID uuid,
+            @Valid @RequestBody TeacherUpdateDTO teacherUpdateDTO,
+            BindingResult bindingResult)
+            throws EntityAlreadyExistsException, EntityInvalidArgumentException, ValidationException, EntityNotFoundException {
+
 //        teacherEditValidator.validate(teacherUpdateDTO, bindingResult);
-//        if (bindingResult.hasErrors()) {
-//            throw new ValidationException("Teacher", "Invalid teacher data", bindingResult);
-//        }
-//
-//        TeacherReadOnlyDTO teacherReadOnlyDTO = teacherService.updateTeacher(teacherUpdateDTO);
-//        return ResponseEntity.ok(teacherReadOnlyDTO);
-//    }
+
+        if (bindingResult.hasErrors()) {
+            throw new ValidationException("Teacher", "Invalid teacher data", bindingResult);
+        }
+
+        TeacherReadOnlyDTO teacherReadOnlyDTO = teacherService.updateTeacher(teacherUpdateDTO);
+        return ResponseEntity.ok(teacherReadOnlyDTO);
+    }
 //
 //    @Operation(summary = "Get all teachers paginated and filtered")
 //    @SecurityRequirement(name = "Bearer Authentication")
