@@ -2,6 +2,7 @@ package gr.aueb.cf.eduapp.api;
 
 import gr.aueb.cf.eduapp.core.exceptions.*;
 //import gr.aueb.cf.eduapp.core.filters.TeacherFilters;
+import gr.aueb.cf.eduapp.core.filters.TeacherFilters;
 import gr.aueb.cf.eduapp.dto.*;
 import gr.aueb.cf.eduapp.service.ITeacherService;
 //import gr.aueb.cf.eduapp.validator.TeacherEditValidator;
@@ -183,13 +184,13 @@ public class TeacherRestController {
 //                    responseCode = "403", description = "Access Denied",
 //                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDTO.class)))
 //    })
-//    @GetMapping
-//    public ResponseEntity<Page<TeacherReadOnlyDTO>> getFilteredAndPaginatedTeachers(
-//            @PageableDefault(page = 0, size = 5) Pageable pageable, @ModelAttribute TeacherFilters filters  // instantiates filters with no-args constructor
-//    ) throws EntityNotFoundException {
-//        Page<TeacherReadOnlyDTO> paginatedDTO = teacherService.getTeachersPaginatedFiltered(pageable, filters);
-//        return ResponseEntity.ok(paginatedDTO);
-//    }
+    @GetMapping
+    public ResponseEntity<Page<TeacherReadOnlyDTO>> getFilteredAndPaginatedTeachers(
+            @PageableDefault(page = 0, size = 5) Pageable pageable, @ModelAttribute TeacherFilters filters  // instantiates filters with no-args constructor
+    ) throws EntityNotFoundException {
+        Page<TeacherReadOnlyDTO> paginatedDTO = teacherService.getTeachersPaginatedFiltered(pageable, filters);
+        return ResponseEntity.ok(paginatedDTO);
+    }
 //
 //    @Operation(summary = "Get one teacher by uuid")
 //    @SecurityRequirement(name = "Bearer Authentication")
