@@ -107,8 +107,14 @@ public class TeacherServiceImpl implements ITeacherService {
 
     @Override
     @Transactional(readOnly = true)
-    public boolean isTeacherExists(String vat) {
+    public boolean isTeacherExistsByVat(String vat) {
         return teacherRepository.findByVat(vat).isPresent();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean isTeacherExists(String uuid) {
+        return false;
     }
 
     @Override
